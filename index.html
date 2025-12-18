@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-
     <meta name="google-site-verification" content="Y51sPfHKIIaxUhe4Hhhe30SqBT17RmjgJ3VCs4DEGsg" />
     <meta property="og:title" content="Pavithra Wijesooriya | Software Engineering Undergraduate">
     <meta property="og:description" content="Portfolio of Pavithra Wijesooriya, a Full-Stack Developer and Software Engineering Undergraduate.">
-    <meta property="og:image" content="https://your-website.com/path-to-preview-image.jpg"> <!-- Important for clicks -->
+    <meta property="og:image" content="https://your-website.com/path-to-preview-image.jpg">
     <meta property="og:url" content="https://pavithrawijesooriya.netlify.app/">
     <meta property="og:type" content="website">
     <meta charset="UTF-8">
@@ -46,7 +45,6 @@
                     keyframes: {
                         fadeUp: {
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            // CHANGED: transform to 'none' to release stacking context
                             '100%': { opacity: '1', transform: 'none' }, 
                         },
                         morph: {
@@ -135,7 +133,7 @@
             border: 1px solid rgba(128, 128, 128, 0.1);
             background-color: var(--bg-card);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            z-index: 41; /* CHANGED: Increased to 41 to sit ABOVE the scanlines (40) */
+            z-index: 41;
         }
         
         .dark .spotlight-card {
@@ -191,7 +189,7 @@
         }
         .reveal.active {
             opacity: 1;
-            transform: none; /* CHANGED: none instead of translateY(0) to release stacking context */
+            transform: none;
         }
 
         /* Typewriter Cursor */
@@ -232,10 +230,9 @@
         }
     </style>
 </head>
-<body class="dark antialiased transition-colors duration-300 selection:bg-teal-500 selection:text-white">
+<body class="dark antialiased transition-colors duration-300 selection:bg-teal-500 selection:text-white overflow-x-hidden">
 
     <!-- Preloader -->
-    <!-- UPDATED: z-[9999] to ensure it covers the header (z-[100] and z-[101]) -->
     <div id="preloader" class="fixed inset-0 z-[9999] bg-[#f0fdfa] dark:bg-[#050505] flex flex-col items-center justify-center transition-opacity duration-500">
         <div class="animate-pulse font-display text-6xl md:text-8xl font-light text-primary mb-8 tracking-tighter">
             &lt;/PW&gt;
@@ -252,14 +249,15 @@
     <canvas id="particle-canvas"></canvas>
 
     <!-- Navigation -->
-    <!-- UPDATED: z-[100] to sit above z-50 images -->
-    <nav id="navbar" class="fixed w-full z-[100] top-0 transition-all duration-300 border-b border-transparent backdrop-blur-md">
-        <!-- UPDATED: relative z-[101] to ensure controls sit above the menu overlay -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[101]">
+    <!-- Fixed Top Navbar with High Z-Index -->
+    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 border-b border-transparent backdrop-blur-md">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 z-50">
-                    <a href="#" class="font-mono text-2xl font-bold tracking-tighter hover:text-primary transition-colors">
+                
+                <!-- Logo: Z-index ensured to be above mobile menu -->
+                <div class="flex-shrink-0 z-[60] relative">
+                    <a href="#" class="font-mono text-2xl font-bold tracking-tighter hover:text-primary transition-colors block">
                         <span class="text-primary">&lt;/</span>PW<span class="text-primary">&gt;</span>
                     </a>
                 </div>
@@ -282,19 +280,18 @@
                     </button>
 
                     <!-- Resume Button (Desktop) -->
-                    <!-- UPDATED: Point to pdfs/resume.pdf -->
                     <a href="pdfs/resume.pdf" download class="ml-6 px-5 py-2.5 text-sm font-mono text-primary border border-primary rounded hover:bg-primary/10 transition-all duration-300 group relative overflow-hidden">
                         <span class="relative z-10">Resume <i class="fas fa-download ml-2 group-hover:translate-y-1 transition-transform"></i></span>
                     </a>
                 </div>
 
-                <!-- Mobile Header Controls -->
-                <div class="md:hidden flex items-center z-50 gap-4">
-                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors pointer-events-auto">
+                <!-- Mobile Header Controls: Z-index ensured to be above mobile menu -->
+                <div class="md:hidden flex items-center gap-4 z-[60] relative">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors pointer-events-auto text-gray-700 dark:text-gray-300">
                         <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
                         <i class="fas fa-moon block dark:hidden text-gray-600"></i>
                     </button>
-                    <button id="mobile-menu-btn" class="text-gray-500 hover:text-primary focus:outline-none pointer-events-auto p-2">
+                    <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none pointer-events-auto p-2">
                         <i class="fas fa-bars text-2xl transition-transform duration-300" id="hamburger-icon"></i>
                     </button>
                 </div>
@@ -302,9 +299,9 @@
         </div>
 
         <!-- Mobile Menu Overlay (Fixed Full Screen) -->
-        <!-- UPDATED: z-[100] to sit above z-50 images, but below z-[101] header controls -->
-        <div id="mobile-menu" class="fixed inset-0 z-[100] bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center md:hidden">
-            <div class="flex flex-col space-y-8 text-center">
+        <!-- Placed below controls using z-40 -->
+        <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center md:hidden h-screen w-screen">
+            <div class="flex flex-col space-y-8 text-center p-4">
                 <a href="#about" class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">About</a>
                 <a href="#tech" class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Technologies</a>
                 <a href="#experience" class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Experience</a>
@@ -313,7 +310,6 @@
                 <a href="#contact" class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Contact</a>
                 
                 <!-- Resume Button (Mobile) -->
-                <!-- UPDATED: Point to pdfs/resume.pdf -->
                 <a href="pdfs/resume.pdf" download class="px-8 py-4 mt-8 border-2 border-primary text-primary font-mono text-lg rounded hover:bg-primary/10 transition flex items-center justify-center gap-2">
                     Download CV <i class="fas fa-download"></i>
                 </a>
@@ -322,13 +318,12 @@
     </nav>
 
     <!-- Main Content -->
-    <!-- Removed z-10 from main to allow children to use global z-index scaling -->
     <main class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24 relative z-auto">
         
         <!-- Hero Section -->
         <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 md:pt-16 md:justify-between gap-10">
             <!-- Text Content -->
-            <div class="flex-1 text-left">
+            <div class="flex-1 text-left w-full">
                 <p class="font-mono text-primary mb-5 animate-fade-up" style="animation-delay: 0.1s;">Hi, my name is</p>
                 <h1 class="font-display font-bold text-5xl md:text-7xl lg:text-8xl mb-4 text-gray-900 dark:text-gray-100 animate-fade-up" style="animation-delay: 0.2s;">
                     Pavithra Wijesooriya.
@@ -350,10 +345,8 @@
             </div>
 
             <!-- Hero Image with Cool Effect -->
-            <!-- ADDED: relative and z-50 to parent wrapper to ensure it pops out after animation -->
-            <div class="flex-shrink-0 animate-fade-up relative z-50" style="animation-delay: 0.6s;">
-                <!-- Added z-50 to lift image above scanlines -->
-                <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 group z-50">
+            <div class="flex-shrink-0 animate-fade-up relative z-30" style="animation-delay: 0.6s;">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 group z-30">
                     
                     <!-- 1. The Decorative Border (Sits behind) -->
                     <div class="absolute inset-0 border-2 border-primary rounded-lg translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2 z-0"></div>
@@ -363,7 +356,7 @@
                         <!-- Overlay -->
                         <div class="absolute inset-0 bg-primary/20 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0 z-20"></div>
 
-                        <!-- The Image - REMOVED GRAYSCALE FILTERS -->
+                        <!-- The Image -->
                         <img src="img/paviyha.jpeg" alt="Pavithra" class="w-full h-full object-cover transition-all duration-500">
                     </div>
 
@@ -393,11 +386,9 @@
                 </div>
 
                 <div class="md:col-span-2 flex justify-center md:justify-start">
-                    <!-- Added z-50 to lift image above scanlines -->
-                    <div class="relative group w-64 h-64 z-50">
+                    <div class="relative group w-64 h-64 z-30">
                         <div class="absolute top-4 left-4 w-full h-full border-2 border-primary rounded transition-transform duration-300 group-hover:translate-x-[-10px] group-hover:translate-y-[-10px]"></div>
                         <div class="relative w-full h-full rounded bg-teal-500 overflow-hidden">
-                            <!-- Removed mix-blend and grayscale filters -->
                             <img src="img/paviyha.jpeg" alt="Profile" class="w-full h-full object-cover transition duration-500">
                         </div>
                     </div>
