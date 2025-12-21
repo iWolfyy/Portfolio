@@ -852,24 +852,20 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // --- Theme Toggle Logic ---
+        // --- Force Dark Mode as Default ---
         const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
         const html = document.documentElement;
         const body = document.body;
 
-        function updateParticlesOnThemeChange() {
-            if (typeof initParticles === 'function') {
-                initParticles();
-            }
-        }
-
-        // Check local storage or preference
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-            body.classList.add('dark');
-        } else {
+        // Check if the user specifically chose 'light' in a previous visit.
+        // If not, or if it's a first-time visit, default to DARK.
+        if (localStorage.theme === 'light') {
             html.classList.remove('dark');
             body.classList.remove('dark');
+        } else {
+            html.classList.add('dark');
+            body.classList.add('dark');
+            localStorage.theme = 'dark'; // Save it as dark for new users
         }
 
         themeToggles.forEach(toggle => {
@@ -877,6 +873,7 @@
                 html.classList.toggle('dark');
                 body.classList.toggle('dark');
                 
+                // Update local storage based on the toggle action
                 if (html.classList.contains('dark')) {
                     localStorage.theme = 'dark';
                 } else {
