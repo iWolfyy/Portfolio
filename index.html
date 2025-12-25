@@ -763,22 +763,37 @@
                     </div>
 
                     <!-- Right Column: Form -->
-                    <form id="contact-form" class="text-left bg-white dark:bg-gray-900/50 backdrop-blur-md p-8 rounded-xl border border-gray-200 dark:border-gray-800 shadow-xl pointer-events-auto">
+                    <form id="contact-form"
+                        class="text-left bg-white dark:bg-gray-900/50 backdrop-blur-md p-8 rounded-xl border border-gray-200 dark:border-gray-800 shadow-xl pointer-events-auto"
+                        action="https://formsubmit.co/wadptw@gmail.com" method="POST">
+                        <input type="text" name="_honey" style="display:none">
+                    
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New Message from Portfolio!">
+                        <input type="hidden" name="_template" value="table">
+                    
                         <div class="grid md:grid-cols-2 gap-6 mb-6">
                             <div>
                                 <label class="block text-sm font-mono text-gray-500 mb-2">Name</label>
-                                <input type="text" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded p-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-primary transition" placeholder="Recruiter Name">
+                                <input type="text" name="name" required
+                                    class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded p-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-primary transition"
+                                    placeholder="Recruiter Name">
                             </div>
                             <div>
                                 <label class="block text-sm font-mono text-gray-500 mb-2">Email</label>
-                                <input type="email" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded p-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-primary transition" placeholder="recruiter@company.com">
+                                <input type="email" name="email" required
+                                    class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded p-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-primary transition"
+                                    placeholder="recruiter@company.com">
                             </div>
                         </div>
                         <div class="mb-6">
                             <label class="block text-sm font-mono text-gray-500 mb-2">Message</label>
-                            <textarea class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded p-3 h-32 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-primary transition" placeholder="Hello Pavithra! We'd like to interview you..."></textarea>
+                            <textarea name="message" required
+                                class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded p-3 h-32 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-primary transition"
+                                placeholder="Hello Pavithra! We'd like to interview you..."></textarea>
                         </div>
-                        <button type="submit" class="w-full py-4 border border-primary text-primary font-mono font-bold rounded hover:bg-primary hover:text-gray-900 transition duration-300">
+                        <button type="submit"
+                            class="w-full py-4 border border-primary text-primary font-mono font-bold rounded hover:bg-primary hover:text-gray-900 transition duration-300">
                             Send Message
                         </button>
                     </form>
@@ -978,20 +993,52 @@
         });
         
         // --- Simple Form Handler (Prevents Refresh) ---
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('button');
-            const originalText = btn.innerText;
-            
+        // --- Fixed Form Handler for Plain HTML ---
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // This stops the page from reloading
+    
+    const form = this;
+    const btn = form.querySelector('button');
+    const originalText = btn.innerText;
+
+    // Show loading state
+    btn.innerText = 'Sending...';
+    btn.disabled = true;
+
+    // This part actually sends the email to FormSubmit.co
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Success: Show the green button effect
             btn.innerText = 'Message Sent!';
-            btn.classList.add('bg-green-500', 'border-green-500', 'text-white');
-            
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.classList.remove('bg-green-500', 'border-green-500', 'text-white');
-                this.reset();
-            }, 3000);
-        });
+            btn.style.backgroundColor = '#22c55e'; // Green color
+            btn.style.borderColor = '#22c55e';
+            btn.style.color = '#ffffff';
+            form.reset();
+        } else {
+            btn.innerText = 'Error! Try again.';
+        }
+    })
+    .catch(error => {
+        btn.innerText = 'Network Error';
+    })
+    .finally(() => {
+        // Reset the button back to normal after 3 seconds
+        setTimeout(() => {
+            btn.innerText = originalText;
+            btn.disabled = false;
+            btn.style.backgroundColor = ''; 
+            btn.style.borderColor = '';
+            btn.style.color = '';
+        }, 3000);
+    });
+});
 
 
         // --- Particle Network Logic (Restored & Blended) ---
