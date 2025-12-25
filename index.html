@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta name="google-site-verification" content="Y51sPfHKIIaxUhe4Hhhe30SqBT17RmjgJ3VCs4DEGsg" />
     <meta property="og:title" content="Pavithra Wijesooriya | Software Engineering Undergraduate">
-    <meta property="og:description" content="Portfolio of Pavithra Wijesooriya, a Full-Stack Developer and Software Engineering Undergraduate.">
-    <meta property="og:image" content="https://your-website.com/path-to-preview-image.jpg">
+    <meta property="og:description"
+        content="Portfolio of Pavithra Wijesooriya, a Full-Stack Developer and Software Engineering Undergraduate.">
+    <meta property="og:image" content="https://pavithrawijesooriya.netlify.app/img/paviyha.jpeg">
     <meta property="og:url" content="https://pavithrawijesooriya.netlify.app/">
     <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pavithra Wijesooriya | Software Engineering Undergraduate">
+    <meta name="twitter:description"
+        content="Portfolio of Pavithra Wijesooriya, a Full-Stack Developer and Software Engineering Undergraduate.">
+    <meta name="twitter:image" content="https://pavithrawijesooriya.netlify.app/img/paviyha.jpeg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Pavithra Wijesooriya",
+      "url": "https://pavithrawijesooriya.netlify.app/",
+      "image": "https://pavithrawijesooriya.netlify.app/img/paviyha.jpeg",
+      "sameAs": [
+        "https://www.linkedin.com/in/pavithrawijesooriya/",
+        "https://github.com/iWolfyy",
+        "https://www.instagram.com/paviyha/"
+      ],
+      "jobTitle": "Software Engineering Undergraduate",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "description": "Software Engineering Undergraduate passionate about building scalable solutions and accessible digital experiences."
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pavithra Wijesooriya | Software Engineering Undergraduate</title>
-    <meta name="description" content="Portfolio of Pavithra Wijesooriya, a Software Engineering Undergraduate seeking entry-level opportunities.">
+    <meta name="description"
+        content="Portfolio of Pavithra Wijesooriya, a Software Engineering Undergraduate seeking entry-level opportunities.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- Devicon Library -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="icon" type="image/x-icon" href="/img/icon.png">
-    
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -45,7 +75,7 @@
                     keyframes: {
                         fadeUp: {
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'none' }, 
+                            '100%': { opacity: '1', transform: 'none' },
                         },
                         morph: {
                             '0%': { borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%' },
@@ -64,7 +94,7 @@
             --cursor-x: 50%;
             --cursor-y: 50%;
             --spotlight-color: rgba(45, 212, 191, 0.15);
-            --scanline-bg: rgba(0,0,0,0.05);
+            --scanline-bg: rgba(0, 0, 0, 0.05);
             --particle-blur: 1.5px;
         }
 
@@ -72,12 +102,13 @@
             background-color: #050505;
             color: #e5e5e5;
             --spotlight-color: rgba(45, 212, 191, 0.15);
-            --scanline-bg: rgba(0,0,0,0.3);
+            --scanline-bg: rgba(0, 0, 0, 0.3);
             --particle-blur: 2px;
         }
 
         body {
-            background-color: #f0fdfa; /* Very light teal/slate */
+            background-color: #f0fdfa;
+            /* Very light teal/slate */
             color: #171717;
             --spotlight-color: rgba(15, 118, 110, 0.1);
         }
@@ -87,15 +118,39 @@
             position: fixed;
             border-radius: 50%;
             filter: blur(80px);
-            z-index: -3; /* Lowest layer */
+            z-index: -3;
+            /* Lowest layer */
             opacity: 0.6;
             will-change: transform;
-            transition: none; 
+            transition: none;
         }
 
-        .blob-1 { top: -10%; left: -10%; width: 600px; height: 600px; background: rgba(45, 212, 191, 0.2); }
-        .blob-2 { bottom: -10%; right: -10%; width: 500px; height: 500px; background: rgba(168, 85, 247, 0.15); } /* Purple accent */
-        .blob-3 { top: 40%; left: 30%; width: 400px; height: 400px; background: rgba(59, 130, 246, 0.15); } /* Blue accent */
+        .blob-1 {
+            top: -10%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(45, 212, 191, 0.2);
+        }
+
+        .blob-2 {
+            bottom: -10%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(168, 85, 247, 0.15);
+        }
+
+        /* Purple accent */
+        .blob-3 {
+            top: 40%;
+            left: 30%;
+            width: 400px;
+            height: 400px;
+            background: rgba(59, 130, 246, 0.15);
+        }
+
+        /* Blue accent */
 
         /* --- Particle Canvas (Layer -2) --- */
         #particle-canvas {
@@ -122,7 +177,7 @@
             background-size: 3px 3px;
             opacity: 0.15;
             pointer-events: none;
-            z-index: 40; 
+            z-index: 40;
             transition: background-image 0.3s;
         }
 
@@ -135,27 +190,28 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             z-index: 41;
         }
-        
+
         .dark .spotlight-card {
             background-color: rgba(23, 23, 23, 0.6);
-            border-color: rgba(255,255,255,0.08);
+            border-color: rgba(255, 255, 255, 0.08);
         }
-        
+
         body:not(.dark) .spotlight-card {
             background-color: rgba(255, 255, 255, 0.6);
-            border-color: rgba(0,0,0,0.05);
+            border-color: rgba(0, 0, 0, 0.05);
         }
 
         /* The Glow Overlay */
         .spotlight-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(
-                800px circle at var(--mouse-x) var(--mouse-y),
-                var(--spotlight-color),
-                transparent 40%
-            );
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+                    var(--spotlight-color),
+                    transparent 40%);
             opacity: 0;
             transition: opacity 0.5s;
             pointer-events: none;
@@ -170,13 +226,16 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: transparent;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #2dd4bf;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #0d9488;
         }
@@ -187,6 +246,7 @@
             transform: translateY(30px);
             transition: all 0.8s ease-out;
         }
+
         .reveal.active {
             opacity: 1;
             transform: none;
@@ -202,19 +262,32 @@
             vertical-align: middle;
             animation: blink 1s infinite;
         }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
 
         /* Navigation Active State */
         .nav-link.active {
             color: #2dd4bf;
         }
+
         .nav-link.active::after {
             width: 100%;
         }
-        
+
         .nav-link {
             position: relative;
         }
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -225,6 +298,7 @@
             background-color: #2dd4bf;
             transition: width 0.3s;
         }
+
         .nav-link:hover::after {
             width: 100%;
         }
@@ -234,10 +308,12 @@
                 text-shadow: 0 0 5px rgba(45, 212, 191, 0.7);
                 color: #2dd4bf;
             }
+
             50% {
                 text-shadow: 0 0 5px rgba(229, 229, 229, 0.7);
                 color: #e5e5e5;
             }
+
             100% {
                 text-shadow: 0 0 5px rgba(45, 212, 191, 0.7);
                 color: #2dd4bf;
@@ -247,76 +323,212 @@
         .glowing-text {
             display: inline-block;
         }
+
         .glowing-text span {
             animation: glowing 5s linear infinite;
         }
+
         .glowing-text span:nth-child(2) {
             animation-delay: 0.2s;
         }
+
+        /* --- Scroll Progress Bar --- */
+        #scroll-progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            z-index: 100;
+            background: transparent;
+        }
+
+        #scroll-progress-bar {
+            height: 100%;
+            background: #2dd4bf;
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* --- Image Lightbox --- */
+        #lightbox {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        #lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(45, 212, 191, 0.2);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        #lightbox.active img {
+            transform: scale(1);
+        }
+
+        #lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        #lightbox-close:hover {
+            color: #2dd4bf;
+        }
+
+        /* --- Rainbow Wave Footer --- */
+        .footer-char {
+            display: inline-block;
+            animation: rainbow-flow 2.5s linear infinite;
+            /* Slightly faster (2.5s) */
+        }
+
+        @keyframes rainbow-flow {
+            0% {
+                color: #2dd4bf;
+                text-shadow: 0 0 10px rgba(45, 212, 191, 0.5);
+            }
+
+            25% {
+                color: #818cf8;
+                text-shadow: 0 0 10px rgba(129, 140, 248, 0.5);
+            }
+
+            50% {
+                color: #a855f7;
+                text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+            }
+
+            75% {
+                color: #3b82f6;
+                text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            }
+
+            100% {
+                color: #2dd4bf;
+                text-shadow: 0 0 10px rgba(45, 212, 191, 0.5);
+            }
+        }
     </style>
 </head>
-<body class="dark antialiased transition-colors duration-300 selection:bg-teal-500 selection:text-white overflow-x-hidden">
+
+<body
+    class="dark antialiased transition-colors duration-300 selection:bg-teal-500 selection:text-white overflow-x-hidden">
 
     <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 z-[9999] bg-[#f0fdfa] dark:bg-[#050505] flex flex-col items-center justify-center transition-opacity duration-500">
+    <div id="preloader"
+        class="fixed inset-0 z-[9999] bg-[#f0fdfa] dark:bg-[#050505] flex flex-col items-center justify-center transition-opacity duration-500">
         <div class="font-display text-6xl md:text-8xl font-light mb-8 tracking-tighter">
-            <span class="text-primary">&lt;/</span><span class="glowing-text"><span>P</span><span>W</span></span><span class="text-primary">&gt;</span>
+            <span class="text-primary">&lt;/</span><span class="glowing-text"><span>P</span><span>W</span></span><span
+                class="text-primary">&gt;</span>
         </div>
         <div class="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
+    </div>
+
+    <!-- No Script Fallback -->
+    <noscript>
+        <div class="fixed inset-0 z-[10000] bg-white dark:bg-black flex items-center justify-center text-center p-8">
+            <h1 class="text-2xl font-bold text-red-500">JavaScript is Required</h1>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">Please enable JavaScript to view this portfolio correctly.
+            </p>
+        </div>
+    </noscript>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-container">
+        <div id="scroll-progress-bar"></div>
     </div>
 
     <!-- Ambient Background -->
     <div class="ambient-blob blob-1"></div>
     <div class="ambient-blob blob-2"></div>
     <div class="ambient-blob blob-3"></div>
-    
+
     <!-- Particle Canvas -->
     <canvas id="particle-canvas"></canvas>
 
     <!-- Navigation -->
     <!-- Fixed Top Navbar with High Z-Index -->
-    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 border-b border-transparent backdrop-blur-md">
-        
+    <nav id="navbar"
+        class="fixed w-full z-50 top-0 transition-all duration-300 border-b border-transparent backdrop-blur-md">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                
+
                 <!-- Logo: Z-index ensured to be above mobile menu -->
                 <div class="flex-shrink-0 z-[60] relative">
-                    <a href="#" class="font-mono text-2xl font-bold tracking-tighter hover:text-primary transition-colors block">
-                        <span class="text-primary">&lt;/</span><span class="glowing-text"><span>P</span><span>W</span></span><span class="text-primary">&gt;</span>
+                    <a href="#"
+                        class="font-mono text-2xl font-bold tracking-tighter hover:text-primary transition-colors block">
+                        <span class="text-primary">&lt;/</span><span
+                            class="glowing-text"><span>P</span><span>W</span></span><span
+                            class="text-primary">&gt;</span>
                     </a>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center">
                     <div class="ml-10 flex items-baseline space-x-6">
-                        <a href="#about" class="nav-link text-sm font-mono hover:text-primary transition-colors">About</a>
-                        <a href="#tech" class="nav-link text-sm font-mono hover:text-primary transition-colors">Technologies</a>
-                        <a href="#experience" class="nav-link text-sm font-mono hover:text-primary transition-colors">Experience</a>
-                        <a href="#education" class="nav-link text-sm font-mono hover:text-primary transition-colors">Education</a>
-                        <a href="#projects" class="nav-link text-sm font-mono hover:text-primary transition-colors">Projects</a>
-                        <a href="#contact" class="nav-link text-sm font-mono hover:text-primary transition-colors">Contact</a>
+                        <a href="#about"
+                            class="nav-link text-sm font-mono hover:text-primary transition-colors">About</a>
+                        <a href="#tech"
+                            class="nav-link text-sm font-mono hover:text-primary transition-colors">Technologies</a>
+                        <a href="#experience"
+                            class="nav-link text-sm font-mono hover:text-primary transition-colors">Experience</a>
+                        <a href="#education"
+                            class="nav-link text-sm font-mono hover:text-primary transition-colors">Education</a>
+                        <a href="#projects"
+                            class="nav-link text-sm font-mono hover:text-primary transition-colors">Projects</a>
+                        <a href="#contact"
+                            class="nav-link text-sm font-mono hover:text-primary transition-colors">Contact</a>
                     </div>
 
                     <!-- Theme Toggle -->
-                    <button id="theme-toggle" class="ml-6 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors pointer-events-auto">
+                    <button id="theme-toggle"
+                        class="ml-6 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors pointer-events-auto">
                         <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
                         <i class="fas fa-moon block dark:hidden text-gray-600"></i>
                     </button>
 
                     <!-- Resume Button (Desktop) -->
-                    <a href="pdfs/resume.pdf" download class="ml-6 px-5 py-2.5 text-sm font-mono text-primary border border-primary rounded hover:bg-primary/10 transition-all duration-300 group relative overflow-hidden">
-                        <span class="relative z-10">Resume <i class="fas fa-download ml-2 group-hover:translate-y-1 transition-transform"></i></span>
+                    <a href="pdfs/resume.pdf" download
+                        class="ml-6 px-5 py-2.5 text-sm font-mono text-primary border border-primary rounded hover:bg-primary/10 transition-all duration-300 group relative overflow-hidden">
+                        <span class="relative z-10">Resume <i
+                                class="fas fa-download ml-2 group-hover:translate-y-1 transition-transform"></i></span>
                     </a>
                 </div>
 
                 <!-- Mobile Header Controls: Z-index ensured to be above mobile menu -->
                 <div class="md:hidden flex items-center gap-4 z-[60] relative">
-                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors pointer-events-auto text-gray-700 dark:text-gray-300">
+                    <button id="theme-toggle-mobile"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors pointer-events-auto text-gray-700 dark:text-gray-300">
                         <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
                         <i class="fas fa-moon block dark:hidden text-gray-600"></i>
                     </button>
-                    <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none pointer-events-auto p-2">
+                    <button id="mobile-menu-btn"
+                        class="text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none pointer-events-auto p-2">
                         <i class="fas fa-bars text-2xl transition-transform duration-300" id="hamburger-icon"></i>
                     </button>
                 </div>
@@ -325,17 +537,25 @@
 
         <!-- Mobile Menu Overlay (Fixed Full Screen) -->
         <!-- Placed below controls using z-40 -->
-        <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center md:hidden h-screen w-screen">
+        <div id="mobile-menu"
+            class="fixed inset-0 z-40 bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center md:hidden h-screen w-screen">
             <div class="flex flex-col space-y-8 text-center p-4">
-                <a href="#about" class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">About</a>
-                <a href="#tech" class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Technologies</a>
-                <a href="#experience" class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Experience</a>
-                <a href="#education" class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Education</a>
-                <a href="#projects" class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Projects</a>
-                <a href="#contact" class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Contact</a>
-                
+                <a href="#about"
+                    class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">About</a>
+                <a href="#tech"
+                    class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Technologies</a>
+                <a href="#experience"
+                    class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Experience</a>
+                <a href="#education"
+                    class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Education</a>
+                <a href="#projects"
+                    class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Projects</a>
+                <a href="#contact"
+                    class="mobile-link text-2xl font-display font-bold hover:text-primary transition-colors">Contact</a>
+
                 <!-- Resume Button (Mobile) -->
-                <a href="pdfs/resume.pdf" download class="px-8 py-4 mt-8 border-2 border-primary text-primary font-mono text-lg rounded hover:bg-primary/10 transition flex items-center justify-center gap-2">
+                <a href="pdfs/resume.pdf" download
+                    class="px-8 py-4 mt-8 border-2 border-primary text-primary font-mono text-lg rounded hover:bg-primary/10 transition flex items-center justify-center gap-2">
                     Download CV <i class="fas fa-download"></i>
                 </a>
             </div>
@@ -344,26 +564,33 @@
 
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24 relative z-auto">
-        
+
         <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 md:pt-16 md:justify-between gap-10">
+        <section id="home"
+            class="min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 md:pt-16 md:justify-between gap-10">
             <!-- Text Content -->
             <div class="flex-1 text-left w-full">
                 <p class="font-mono text-primary mb-5 animate-fade-up" style="animation-delay: 0.1s;">Hi, my name is</p>
-                <h1 class="font-display font-bold text-5xl md:text-7xl lg:text-8xl mb-4 text-gray-900 dark:text-gray-100 animate-fade-up" style="animation-delay: 0.2s;">
+                <h1 class="font-display font-bold text-5xl md:text-7xl lg:text-8xl mb-4 text-gray-900 dark:text-gray-100 animate-fade-up"
+                    style="animation-delay: 0.2s;">
                     Pavithra Wijesooriya.
                 </h1>
-                
+
                 <!-- Typewriter Area -->
-                <h2 class="font-display font-bold text-2xl md:text-5xl lg:text-5xl text-gray-500 dark:text-gray-400 mb-8 animate-fade-up min-h-[1.2em]" style="animation-delay: 0.3s;">
+                <h2 class="font-display font-bold text-2xl md:text-5xl lg:text-5xl text-gray-500 dark:text-gray-400 mb-8 animate-fade-up min-h-[1.2em]"
+                    style="animation-delay: 0.3s;">
                     <span id="typewriter"></span><span class="typewriter-cursor"></span>
                 </h2>
-                
-                <p class="max-w-xl text-lg text-gray-600 dark:text-gray-400 mb-12 animate-fade-up leading-relaxed" style="animation-delay: 0.4s;">
-                    I'm a <span class="text-primary font-medium">Software Engineering Undergraduate</span> passionate about building scalable solutions and accessible digital experiences. I am currently honing my skills in full-stack development and seeking opportunities to launch my career.
+
+                <p class="max-w-xl text-lg text-gray-600 dark:text-gray-400 mb-12 animate-fade-up leading-relaxed"
+                    style="animation-delay: 0.4s;">
+                    I'm a <span class="text-primary font-medium">Software Engineering Undergraduate</span> passionate
+                    about building scalable solutions and accessible digital experiences. I am currently honing my
+                    skills in full-stack development and seeking opportunities to launch my career.
                 </p>
                 <div class="animate-fade-up flex gap-4" style="animation-delay: 0.5s;">
-                    <a href="#projects" class="inline-block px-8 py-4 border-2 border-primary text-primary font-mono rounded hover:bg-primary/10 transition duration-300 pointer-events-auto">
+                    <a href="#projects"
+                        class="inline-block px-8 py-4 border-2 border-primary text-primary font-mono rounded hover:bg-primary/10 transition duration-300 pointer-events-auto">
                         Check out my work
                     </a>
                 </div>
@@ -372,17 +599,23 @@
             <!-- Hero Image with Cool Effect -->
             <div class="flex-shrink-0 animate-fade-up relative z-30" style="animation-delay: 0.6s;">
                 <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 group z-30">
-                    
+
                     <!-- 1. The Decorative Border (Sits behind) -->
-                    <div class="absolute inset-0 border-2 border-primary rounded-lg translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2 z-0"></div>
+                    <div
+                        class="absolute inset-0 border-2 border-primary rounded-lg translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2 z-0">
+                    </div>
 
                     <!-- 2. The Image Container (Sits on top) -->
-                    <div class="relative w-full h-full rounded-lg bg-gray-900 overflow-hidden shadow-xl z-10 transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
+                    <div
+                        class="relative w-full h-full rounded-lg bg-gray-900 overflow-hidden shadow-xl z-10 transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
                         <!-- Overlay -->
-                        <div class="absolute inset-0 bg-primary/20 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0 z-20"></div>
+                        <div
+                            class="absolute inset-0 bg-primary/20 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0 z-20">
+                        </div>
 
                         <!-- The Image -->
-                        <img src="img/paviyha.jpeg" alt="Pavithra" class="w-full h-full object-cover transition-all duration-500">
+                        <img src="img/paviyha.jpeg" alt="Pavithra"
+                            class="w-full h-full object-cover transition-all duration-500">
                     </div>
 
                 </div>
@@ -400,21 +633,32 @@
             <div class="grid md:grid-cols-5 gap-12">
                 <div class="md:col-span-3 text-gray-600 dark:text-gray-400 text-lg leading-relaxed space-y-4">
                     <p>
-                        I am a dedicated <span class="text-primary font-medium">Software Engineering Undergraduate</span> with a strong foundation in computer science principles and full-stack development. My passion lies in engineering robust, scalable solutions that address real-world challenges.
+                        I am a dedicated <span class="text-primary font-medium">Software Engineering
+                            Undergraduate</span> with a strong foundation in computer science principles and full-stack
+                        development. My passion lies in engineering robust, scalable solutions that address real-world
+                        challenges.
                     </p>
                     <p>
-                        Beyond the classroom, I actively apply my academic knowledge to build practical applications, ranging from automated bots to complex web platforms. I thrive in problem-solving environments and continuously seek to expand my technical arsenal, with a particular focus on <span class="text-primary">Data Structures, Algorithms, and System Design</span>.
+                        Beyond the classroom, I actively apply my academic knowledge to build practical applications,
+                        ranging from automated bots to complex web platforms. I thrive in problem-solving environments
+                        and continuously seek to expand my technical arsenal, with a particular focus on <span
+                            class="text-primary">Data Structures, Algorithms, and System Design</span>.
                     </p>
                     <p>
-                        Currently, I am seeking <span class="text-primary">internship or entry-level opportunities</span> where I can bring my work ethic and technical skills to a dynamic engineering team, contribute to meaningful projects, and accelerate my professional growth.
+                        Currently, I am seeking <span class="text-primary">internship or entry-level
+                            opportunities</span> where I can bring my work ethic and technical skills to a dynamic
+                        engineering team, contribute to meaningful projects, and accelerate my professional growth.
                     </p>
                 </div>
 
                 <div class="md:col-span-2 flex justify-center md:justify-start">
                     <div class="relative group w-64 h-64 z-30">
-                        <div class="absolute top-4 left-4 w-full h-full border-2 border-primary rounded transition-transform duration-300 group-hover:translate-x-[-10px] group-hover:translate-y-[-10px]"></div>
+                        <div
+                            class="absolute top-4 left-4 w-full h-full border-2 border-primary rounded transition-transform duration-300 group-hover:translate-x-[-10px] group-hover:translate-y-[-10px]">
+                        </div>
                         <div class="relative w-full h-full rounded bg-teal-500 overflow-hidden">
-                            <img src="img/paviyha.jpeg" alt="Profile" class="w-full h-full object-cover transition duration-500">
+                            <img src="img/paviyha.jpeg" alt="Profile"
+                                class="w-full h-full object-cover transition duration-500">
                         </div>
                     </div>
                 </div>
@@ -425,85 +669,131 @@
         <section id="tech" class="py-24 reveal">
             <div class="flex items-center mb-12">
                 <span class="font-mono text-primary text-xl mr-4">02.</span>
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">Technologies</h2>
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">Technologies
+                </h2>
                 <div class="h-[1px] bg-gray-300 dark:bg-gray-700 w-1/4 ml-6"></div>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
                 <!-- Javascript -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-javascript-plain text-5xl text-gray-400 group-hover:text-yellow-400 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">JavaScript</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-javascript-plain text-5xl text-gray-400 group-hover:text-yellow-400 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">JavaScript</span>
                 </div>
                 <!-- TypeScript -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-typescript-plain text-5xl text-gray-400 group-hover:text-blue-500 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">TypeScript</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-typescript-plain text-5xl text-gray-400 group-hover:text-blue-500 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">TypeScript</span>
                 </div>
                 <!-- React -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-react-original text-5xl text-gray-400 group-hover:text-cyan-400 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">React</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-react-original text-5xl text-gray-400 group-hover:text-cyan-400 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">React</span>
                 </div>
                 <!-- Node.js -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-nodejs-plain text-5xl text-gray-400 group-hover:text-green-500 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Node.js</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-nodejs-plain text-5xl text-gray-400 group-hover:text-green-500 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Node.js</span>
                 </div>
-                 <!-- Express.js -->
-                 <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-express-original text-5xl text-gray-400 group-hover:text-gray-200 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Express.js</span>
+                <!-- Express.js -->
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-express-original text-5xl text-gray-400 group-hover:text-gray-200 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Express.js</span>
                 </div>
-                 <!-- HTML5 -->
-                 <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-html5-plain text-5xl text-gray-400 group-hover:text-orange-500 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">HTML5</span>
+                <!-- HTML5 -->
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-html5-plain text-5xl text-gray-400 group-hover:text-orange-500 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">HTML5</span>
                 </div>
                 <!-- CSS3 -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-css3-plain text-5xl text-gray-400 group-hover:text-blue-600 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">CSS3</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-css3-plain text-5xl text-gray-400 group-hover:text-blue-600 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">CSS3</span>
                 </div>
                 <!-- Tailwind -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-tailwindcss-original text-5xl text-gray-400 group-hover:text-cyan-300 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Tailwind</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-tailwindcss-original text-5xl text-gray-400 group-hover:text-cyan-300 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Tailwind</span>
                 </div>
                 <!-- MongoDB -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-mongodb-plain text-5xl text-gray-400 group-hover:text-green-400 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">MongoDB</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-mongodb-plain text-5xl text-gray-400 group-hover:text-green-400 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">MongoDB</span>
                 </div>
                 <!-- Java -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-java-plain text-5xl text-gray-400 group-hover:text-red-500 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Java</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-java-plain text-5xl text-gray-400 group-hover:text-red-500 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Java</span>
                 </div>
                 <!-- Python -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-python-plain text-5xl text-gray-400 group-hover:text-yellow-300 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Python</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-python-plain text-5xl text-gray-400 group-hover:text-yellow-300 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Python</span>
                 </div>
                 <!-- Git -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-git-plain text-5xl text-gray-400 group-hover:text-red-500 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Git</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-git-plain text-5xl text-gray-400 group-hover:text-red-500 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Git</span>
                 </div>
                 <!-- C# -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-csharp-plain text-5xl text-gray-400 group-hover:text-purple-600 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">C#</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-csharp-plain text-5xl text-gray-400 group-hover:text-purple-600 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">C#</span>
                 </div>
                 <!-- C++ -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-cplusplus-plain text-5xl text-gray-400 group-hover:text-blue-600 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">C++</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-cplusplus-plain text-5xl text-gray-400 group-hover:text-blue-600 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">C++</span>
                 </div>
                 <!-- Kotlin -->
-                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group" onmousemove="handleMouseMove(event)">
-                    <i class="devicon-kotlin-plain text-5xl text-gray-400 group-hover:text-purple-500 transition-colors duration-300 relative z-20"></i>
-                    <span class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Kotlin</span>
+                <div class="spotlight-card p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:-translate-y-2 transition-transform duration-300 group"
+                    onmousemove="handleMouseMove(event)">
+                    <i
+                        class="devicon-kotlin-plain text-5xl text-gray-400 group-hover:text-purple-500 transition-colors duration-300 relative z-20"></i>
+                    <span
+                        class="font-mono text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors relative z-20">Kotlin</span>
                 </div>
             </div>
         </section>
@@ -518,22 +808,31 @@
 
             <div class="relative pl-8 md:pl-0">
                 <!-- Timeline Stem (Hidden on mobile, visual only) -->
-                <div class="hidden md:block absolute left-[150px] top-2 bottom-0 w-[2px] bg-gray-200 dark:bg-gray-800"></div>
+                <div class="hidden md:block absolute left-[150px] top-2 bottom-0 w-[2px] bg-gray-200 dark:bg-gray-800">
+                </div>
 
                 <!-- Job 1 -->
                 <div class="md:flex gap-10 mb-12 group">
-                    <div class="md:w-[150px] flex-shrink-0 text-gray-500 dark:text-gray-400 font-mono text-sm pt-1 text-left md:text-right">
+                    <div
+                        class="md:w-[150px] flex-shrink-0 text-gray-500 dark:text-gray-400 font-mono text-sm pt-1 text-left md:text-right">
                         2024 - Present
                     </div>
-                    <div class="relative flex-grow spotlight-card rounded-lg p-6 hover:translate-x-2 transition-transform">
-                         <!-- Timeline Dot -->
-                        <div class="hidden md:block absolute -left-[51px] top-2 w-3 h-3 rounded-full bg-primary border-4 border-gray-900 z-10"></div>
-                        
-                        <h3 class="text-xl font-bold text-gray-100 mb-1">Frontend Web Developer <a href="https://www.ishitaholidays.com/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">@Ishita Holidays</a></h3>
+                    <div
+                        class="relative flex-grow spotlight-card rounded-lg p-6 hover:translate-x-2 transition-transform">
+                        <!-- Timeline Dot -->
+                        <div
+                            class="hidden md:block absolute -left-[51px] top-2 w-3 h-3 rounded-full bg-primary border-4 border-gray-900 z-10">
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-100 mb-1">Frontend Web Developer <a
+                                href="https://www.ishitaholidays.com/" target="_blank" rel="noopener noreferrer"
+                                class="text-primary hover:underline">@Ishita Holidays</a></h3>
                         <p class="text-gray-400 mb-4">Remote / Freelance</p>
                         <ul class="space-y-2 text-gray-400 text-sm list-none">
-                            <li class="flex items-start"><span class="text-primary mr-2">▹</span> Designed, developed, and currently maintaining the company website.</li>
-                            <li class="flex items-start"><span class="text-primary mr-2">▹</span> Optimized frontend performance and responsiveness for mobile devices.</li>
+                            <li class="flex items-start"><span class="text-primary mr-2">▹</span> Designed, developed,
+                                and currently maintaining the company website.</li>
+                            <li class="flex items-start"><span class="text-primary mr-2">▹</span> Optimized frontend
+                                performance and responsiveness for mobile devices.</li>
                         </ul>
                     </div>
                 </div>
@@ -550,60 +849,95 @@
 
             <div class="grid gap-6" onmousemove="handleMouseMove(event)">
                 <!-- Education Item 1 -->
-                <div class="spotlight-card p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50">
-                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
-                         <div>
+                <div
+                    class="spotlight-card p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+                        <div>
                             <div class="flex items-center gap-3 mb-1">
                                 <i class="fas fa-graduation-cap text-xl text-primary"></i>
-                                <h3 class="text-lg font-display font-bold text-gray-900 dark:text-gray-100">BSc (Hons) in Software Engineering</h3>
+                                <h3 class="text-lg font-display font-bold text-gray-900 dark:text-gray-100">BSc (Hons)
+                                    in Software Engineering</h3>
                             </div>
-                            <p class="text-primary font-mono text-sm ml-1">Sri Lanka Institute of Information Technology</p>
-                         </div>
-                         <span class="font-mono text-gray-500 mt-2 md:mt-0 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-xs">2024 - Present</span>
-                     </div>
-                     
-                     <div class="border-t border-gray-200 dark:border-gray-800 my-4"></div>
-
-                     <!-- Coursework Tags -->
-                     <div>
-                        <h4 class="text-xs font-mono text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider font-bold">Key Coursework</h4>
-                        <div class="flex flex-wrap gap-2">
-                           <span class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Data Structures & Algorithms</span>
-                           <span class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Object Oriented Programming</span>
-                           <span class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Database Management Systems</span>
-                           <span class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Web Application Development</span>
-                           <span class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Software Architecture</span>
+                            <p class="text-primary font-mono text-sm ml-1">Sri Lanka Institute of Information Technology
+                            </p>
                         </div>
-                     </div>
+                        <span
+                            class="font-mono text-gray-500 mt-2 md:mt-0 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-xs">2024
+                            - Present</span>
+                    </div>
+
+                    <div class="border-t border-gray-200 dark:border-gray-800 my-4"></div>
+
+                    <!-- Coursework Tags -->
+                    <div>
+                        <h4
+                            class="text-xs font-mono text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider font-bold">
+                            Key Coursework</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Data
+                                Structures & Algorithms</span>
+                            <span
+                                class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Object
+                                Oriented Programming</span>
+                            <span
+                                class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Database
+                                Management Systems</span>
+                            <span
+                                class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Web
+                                Application Development</span>
+                            <span
+                                class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Software
+                                Architecture</span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Education Item 2 -->
-                <div class="spotlight-card p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50">
-                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
-                         <div>
+                <div
+                    class="spotlight-card p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+                        <div>
                             <div class="flex items-center gap-3 mb-1">
                                 <i class="fas fa-graduation-cap text-xl text-primary"></i>
-                                <h3 class="text-lg font-display font-bold text-gray-900 dark:text-gray-100">Assured Diploma in Information Technology (DiTEC)</h3>
+                                <h3 class="text-lg font-display font-bold text-gray-900 dark:text-gray-100">Assured
+                                    Diploma in Information Technology (DiTEC)</h3>
                             </div>
                             <p class="text-primary font-mono text-sm ml-1">Esoft Metro Campus (PVT) LTD</p>
-                         </div>
-                         <span class="font-mono text-gray-500 mt-2 md:mt-0 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-xs">2019 - 2020</span>
-                     </div>
-                     
-                     <div class="border-t border-gray-200 dark:border-gray-800 my-4"></div>
-
-                     <!-- Coursework Tags -->
-                     <div>
-                        <h4 class="text-xs font-mono text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider font-bold">Key Coursework</h4>
-                        <div class="flex flex-wrap gap-2">
-                           <span class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Programming with C#</span>
-                           <span class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Database Concepts</span>
-                           <span class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Software Engineering</span>
-                           <span class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Programming with Python</span>
-                           <span class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Network Technology</span>
-                           <span class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Information Technology Concepts</span>
                         </div>
-                     </div>
+                        <span
+                            class="font-mono text-gray-500 mt-2 md:mt-0 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-xs">2019
+                            - 2020</span>
+                    </div>
+
+                    <div class="border-t border-gray-200 dark:border-gray-800 my-4"></div>
+
+                    <!-- Coursework Tags -->
+                    <div>
+                        <h4
+                            class="text-xs font-mono text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider font-bold">
+                            Key Coursework</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Programming
+                                with C#</span>
+                            <span
+                                class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Database
+                                Concepts</span>
+                            <span
+                                class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Software
+                                Engineering</span>
+                            <span
+                                class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Programming
+                                with Python</span>
+                            <span
+                                class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Network
+                                Technology</span>
+                            <span
+                                class="px-2 py-1 rounded bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono border border-primary/20 hover:bg-primary/20 transition-colors cursor-default">Information
+                                Technology Concepts</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -612,29 +946,35 @@
         <section id="projects" class="py-24 reveal">
             <div class="flex items-center mb-12">
                 <span class="font-mono text-primary text-xl mr-4">05.</span>
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">Some Things I've Built</h2>
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">Some Things
+                    I've Built</h2>
                 <div class="h-[1px] bg-gray-300 dark:bg-gray-700 w-1/4 ml-6"></div>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
+
                 <!-- Project 1: SwiftRide -->
                 <div class="spotlight-card rounded-xl group" onmousemove="handleMouseMove(event)">
-                    <div class="relative h-48 overflow-hidden">
+                    <div class="relative h-48 overflow-hidden cursor-pointer" onclick="openLightbox('img/swift.png')">
                         <!-- Removed bg-primary overlay for Project 1 -->
-                        <img src="img/swift.png" alt="Project" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <img src="img/swift.png" alt="SwiftRide App"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-6 relative z-20">
                         <div class="flex justify-between items-center mb-4">
                             <i class="fas fa-folder text-4xl text-primary/80"></i>
                             <div class="flex space-x-4">
                                 <!-- UPDATED: Larger GitHub icon, removed external link -->
-                                <a href="https://github.com/iWolfyy/SwiftRide" target="_blank" class="text-gray-400 hover:text-primary transition"><i class="fab fa-github text-3xl"></i></a>
+                                <a href="https://github.com/iWolfyy/SwiftRide" target="_blank"
+                                    class="text-gray-400 hover:text-primary transition"><i
+                                        class="fab fa-github text-3xl"></i></a>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-100 mb-2 group-hover:text-primary transition-colors">SwiftRide App</h3>
+                        <h3 class="text-xl font-bold text-gray-100 mb-2 group-hover:text-primary transition-colors">
+                            SwiftRide App</h3>
                         <p class="text-gray-400 text-sm mb-4">
-                            A vehicle renting platform enabling users to book cars seamlessly. Features include real-time availability and payment gateway integration.
+                            A vehicle renting platform enabling users to book cars seamlessly. Features include
+                            real-time availability and payment gateway integration.
                         </p>
                         <div class="flex flex-wrap gap-3 font-mono text-xs text-primary/80">
                             <span>React</span>
@@ -646,21 +986,26 @@
 
                 <!-- Project 2: Highrise Bot (Moved to 2nd Position) -->
                 <div class="spotlight-card rounded-xl group" onmousemove="handleMouseMove(event)">
-                    <div class="relative h-48 overflow-hidden">
+                    <div class="relative h-48 overflow-hidden cursor-pointer" onclick="openLightbox('img/hr.png')">
                         <!-- Removed bg-primary overlay for Project 2 -->
-                        <img src="img/hr.png" alt="Project" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <img src="img/hr.png" alt="Highrise Bot"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-6 relative z-20">
                         <div class="flex justify-between items-center mb-4">
                             <i class="fas fa-folder text-4xl text-primary/80"></i>
                             <div class="flex space-x-4">
                                 <!-- UPDATED: Larger GitHub icon, removed external link -->
-                                <a href="https://github.com/iWolfyy/HighRise-Bot" target="_blank" class="text-gray-400 hover:text-primary transition"><i class="fab fa-github text-3xl"></i></a>
+                                <a href="https://github.com/iWolfyy/HighRise-Bot" target="_blank"
+                                    class="text-gray-400 hover:text-primary transition"><i
+                                        class="fab fa-github text-3xl"></i></a>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-100 mb-2 group-hover:text-primary transition-colors">Highrise Bot</h3>
+                        <h3 class="text-xl font-bold text-gray-100 mb-2 group-hover:text-primary transition-colors">
+                            Highrise Bot</h3>
                         <p class="text-gray-400 text-sm mb-4">
-                            An automated bot for the Highrise metaverse. Handles user moderation, mini-games, and inventory management using WebSocket.
+                            An automated bot for the Highrise metaverse. Handles user moderation, mini-games, and
+                            inventory management using WebSocket.
                         </p>
                         <div class="flex flex-wrap gap-3 font-mono text-xs text-primary/80">
                             <span>Python</span>
@@ -672,21 +1017,27 @@
 
                 <!-- Project 3: AuraFlow (Moved to 3rd Position) -->
                 <div class="spotlight-card rounded-xl group" onmousemove="handleMouseMove(event)">
-                    <div class="relative h-48 overflow-hidden">
-                         <!-- Removed bg-primary overlay for Project 3 -->
-                        <img src="img/auraflow.png" alt="Project" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="relative h-48 overflow-hidden cursor-pointer"
+                        onclick="openLightbox('img/auraflow.png')">
+                        <!-- Removed bg-primary overlay for Project 3 -->
+                        <img src="img/auraflow.png" alt="AuraFlow"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-6 relative z-20">
                         <div class="flex justify-between items-center mb-4">
                             <i class="fas fa-folder text-4xl text-primary/80"></i>
                             <div class="flex space-x-4">
                                 <!-- UPDATED: Larger GitHub icon, removed external link -->
-                                <a href="https://github.com/iWolfyy/AuraFlow" target="_blank" class="text-gray-400 hover:text-primary transition"><i class="fab fa-github text-3xl"></i></a>
+                                <a href="https://github.com/iWolfyy/AuraFlow" target="_blank"
+                                    class="text-gray-400 hover:text-primary transition"><i
+                                        class="fab fa-github text-3xl"></i></a>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-100 mb-2 group-hover:text-primary transition-colors">AuraFlow </h3>
+                        <h3 class="text-xl font-bold text-gray-100 mb-2 group-hover:text-primary transition-colors">
+                            AuraFlow </h3>
                         <p class="text-gray-400 text-sm mb-4">
-                            A personal habit tracker app to help users build and maintain positive routines. Features include habit tracking, reminders, and progress visualization.
+                            A personal habit tracker app to help users build and maintain positive routines. Features
+                            include habit tracking, reminders, and progress visualization.
                         </p>
                         <div class="flex flex-wrap gap-3 font-mono text-xs text-primary/80">
                             <span>Kotlin</span>
@@ -696,21 +1047,28 @@
 
                 <!-- Project 4: Online Shopping Store (New) -->
                 <div class="spotlight-card rounded-xl group" onmousemove="handleMouseMove(event)">
-                    <div class="relative h-48 overflow-hidden">
-                         <!-- Removed bg-primary overlay for Project 4 -->
-                        <img src="https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="relative h-48 overflow-hidden cursor-pointer"
+                        onclick="openLightbox('https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+                        <!-- Removed bg-primary overlay for Project 4 -->
+                        <img src="https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Online Shopping Store"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-6 relative z-20">
                         <div class="flex justify-between items-center mb-4">
                             <i class="fas fa-folder text-4xl text-primary/80"></i>
                             <div class="flex space-x-4">
                                 <!-- UPDATED: Larger GitHub icon, removed external link -->
-                                <a href="https://github.com/iWolfyy/OnlineShoppingStore" target="_blank" class="text-gray-400 hover:text-primary transition"><i class="fab fa-github text-3xl"></i></a>
+                                <a href="https://github.com/iWolfyy/OnlineShoppingStore" target="_blank"
+                                    class="text-gray-400 hover:text-primary transition"><i
+                                        class="fab fa-github text-3xl"></i></a>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-100 mb-2 group-hover:text-primary transition-colors">Online Shopping Store</h3>
+                        <h3 class="text-xl font-bold text-gray-100 mb-2 group-hover:text-primary transition-colors">
+                            Online Shopping Store</h3>
                         <p class="text-gray-400 text-sm mb-4">
-                            A comprehensive e-commerce platform allowing users to browse products, manage carts, and process secure transactions.
+                            A comprehensive e-commerce platform allowing users to browse products, manage carts, and
+                            process secure transactions.
                         </p>
                         <div class="flex flex-wrap gap-3 font-mono text-xs text-primary/80">
                             <span>Java</span>
@@ -728,36 +1086,44 @@
         <section id="contact" class="py-24 reveal">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 gap-16 items-center">
-                    
+
                     <!-- Left Column: Text & Socials -->
                     <div class="text-left">
-                         <p class="font-mono text-primary text-lg mb-4">06. What's Next?</p>
-                        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">Get In Touch</h2>
+                        <p class="font-mono text-primary text-lg mb-4">06. What's Next?</p>
+                        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+                            Get In Touch</h2>
                         <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 leading-relaxed">
-                            I am actively looking for internship and entry-level opportunities. Whether you have a question or just want to say hi, my inbox is always open!
+                            I am actively looking for internship and entry-level opportunities. Whether you have a
+                            question or just want to say hi, my inbox is always open!
                         </p>
 
                         <!-- Contact Details -->
                         <div class="space-y-4">
-                            <a href="mailto:wadptw@gmail.com" class="flex items-center gap-4 text-gray-600 dark:text-gray-400 hover:text-primary transition group">
-                                <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary/20 transition">
+                            <a href="mailto:wadptw@gmail.com"
+                                class="flex items-center gap-4 text-gray-600 dark:text-gray-400 hover:text-primary transition group">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary/20 transition">
                                     <i class="fas fa-envelope text-xl group-hover:text-primary"></i>
                                 </div>
                                 <span class="font-mono text-sm md:text-base">wadptw@gmail.com</span>
                             </a>
-                            
-                            <a href="https://www.linkedin.com/in/pavithrawijesooriya/" target="_blank" class="flex items-center gap-4 text-gray-600 dark:text-gray-400 hover:text-primary transition group">
-                                <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary/20 transition">
+
+                            <a href="https://www.linkedin.com/in/pavithrawijesooriya/" target="_blank"
+                                class="flex items-center gap-4 text-gray-600 dark:text-gray-400 hover:text-primary transition group">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary/20 transition">
                                     <i class="fab fa-linkedin-in text-xl group-hover:text-primary"></i>
                                 </div>
-                                 <span class="font-mono text-sm md:text-base">LinkedIn</span>
+                                <span class="font-mono text-sm md:text-base">LinkedIn</span>
                             </a>
-                            
-                            <a href="https://github.com/iWolfyy" target="_blank" class="flex items-center gap-4 text-gray-600 dark:text-gray-400 hover:text-primary transition group">
-                                 <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary/20 transition">
+
+                            <a href="https://github.com/iWolfyy" target="_blank"
+                                class="flex items-center gap-4 text-gray-600 dark:text-gray-400 hover:text-primary transition group">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary/20 transition">
                                     <i class="fab fa-github text-xl group-hover:text-primary"></i>
                                 </div>
-                                 <span class="font-mono text-sm md:text-base">Github</span>
+                                <span class="font-mono text-sm md:text-base">Github</span>
                             </a>
                         </div>
                     </div>
@@ -767,11 +1133,11 @@
                         class="text-left bg-white dark:bg-gray-900/50 backdrop-blur-md p-8 rounded-xl border border-gray-200 dark:border-gray-800 shadow-xl pointer-events-auto"
                         action="https://formsubmit.co/b3e50b8cf881a584f0f0361ca51ba9eb" method="POST">
                         <input type="text" name="_honey" style="display:none">
-                    
+
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="New Message from Portfolio!">
                         <input type="hidden" name="_template" value="table">
-                    
+
                         <div class="grid md:grid-cols-2 gap-6 mb-6">
                             <div>
                                 <label class="block text-sm font-mono text-gray-500 mb-2">Name</label>
@@ -805,28 +1171,42 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 text-center text-gray-500 dark:text-gray-400 font-mono text-sm relative z-10 bg-gray-50 dark:bg-black/50 backdrop-blur pointer-events-auto">
+    <footer
+        class="py-8 text-center text-gray-500 dark:text-gray-400 font-mono text-sm relative z-10 bg-gray-50 dark:bg-black/50 backdrop-blur pointer-events-auto">
         <div class="flex justify-center space-x-8 mb-4">
-            <a href="https://github.com/iWolfyy" target="_blank" class="hover:text-primary transition transform hover:-translate-y-1"><i class="fab fa-github text-xl"></i></a>
-            <a href="https://www.linkedin.com/in/pavithrawijesooriya/" target="_blank" class="hover:text-primary transition transform hover:-translate-y-1"><i class="fab fa-linkedin text-xl"></i></a>
-            <a href="https://www.instagram.com/paviyha/" target="_blank" class="hover:text-primary transition transform hover:-translate-y-1"><i class="fab fa-instagram text-xl"></i></a>
+            <a href="https://github.com/iWolfyy" target="_blank"
+                class="hover:text-primary transition transform hover:-translate-y-1"><i
+                    class="fab fa-github text-xl"></i></a>
+            <a href="https://www.linkedin.com/in/pavithrawijesooriya/" target="_blank"
+                class="hover:text-primary transition transform hover:-translate-y-1"><i
+                    class="fab fa-linkedin text-xl"></i></a>
+            <a href="https://www.instagram.com/paviyha/" target="_blank"
+                class="hover:text-primary transition transform hover:-translate-y-1"><i
+                    class="fab fa-instagram text-xl"></i></a>
         </div>
-        <p>Designed & Built by Pavithra Wijesooriya</p>
+        <p>Designed & Built by <span id="footer-name" class="font-bold">Pavithra Wijesooriya</span></p>
     </footer>
 
     <!-- Scroll to Top -->
-    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-primary/20 hover:bg-primary text-primary hover:text-gray-900 p-3 rounded shadow-lg backdrop-blur transition-all duration-300 opacity-0 translate-y-10 z-40 pointer-events-auto">
+    <button id="scrollToTop"
+        class="fixed bottom-8 right-8 bg-primary/20 hover:bg-primary text-primary hover:text-gray-900 p-3 rounded shadow-lg backdrop-blur transition-all duration-300 opacity-0 translate-y-10 z-40 pointer-events-auto">
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Project Preview">
+    </div>
+
     <script>
         // --- Preloader & Scroll Progress Logic ---
-        
+
         // Preloader with Fallbacks
         const preloader = document.getElementById('preloader');
-        
+
         const fadeOutPreloader = () => {
-            if(preloader) {
+            if (preloader) {
                 preloader.classList.add('opacity-0', 'pointer-events-none');
                 setTimeout(() => {
                     preloader.style.display = 'none';
@@ -835,7 +1215,7 @@
         };
 
         window.addEventListener('load', fadeOutPreloader);
-        
+
         // Fallback 1: If readyState is already complete
         if (document.readyState === 'complete') {
             setTimeout(fadeOutPreloader, 100);
@@ -850,12 +1230,19 @@
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
         const scrollTopBtn = document.getElementById('scrollToTop');
+        const scrollProgressBar = document.getElementById('scroll-progress-bar');
 
         window.addEventListener('scroll', () => {
             let current = '';
             const scrollY = window.scrollY;
-            
-            // 1. Navbar Glass Effect
+
+            // 0. Update Scroll Progress Bar
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            if (scrollProgressBar) {
+                scrollProgressBar.style.width = scrolled + "%";
+            }
             if (scrollY > 50) {
                 navbar.classList.add('border-b', 'border-gray-200', 'dark:border-white/10', 'bg-white/80', 'dark:bg-black/80', 'shadow-sm');
                 navbar.classList.remove('border-transparent');
@@ -887,7 +1274,7 @@
                 scrollTopBtn.classList.add('opacity-0', 'translate-y-10');
             }
         });
-        
+
         document.getElementById('scrollToTop').addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
@@ -912,7 +1299,7 @@
             toggle.addEventListener('click', () => {
                 html.classList.toggle('dark');
                 body.classList.toggle('dark');
-                
+
                 // Update local storage based on the toggle action
                 if (html.classList.contains('dark')) {
                     localStorage.theme = 'dark';
@@ -970,7 +1357,7 @@
 
         function toggleMenu() {
             const isOpen = !mobileMenu.classList.contains('translate-x-full');
-            
+
             if (isOpen) {
                 // Close it
                 mobileMenu.classList.add('translate-x-full');
@@ -991,54 +1378,54 @@
         mobileLinks.forEach(link => {
             link.addEventListener('click', toggleMenu);
         });
-        
+
         // --- Simple Form Handler (Prevents Refresh) ---
         // --- Fixed Form Handler for Plain HTML ---
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // This stops the page from reloading
-    
-    const form = this;
-    const btn = form.querySelector('button');
-    const originalText = btn.innerText;
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // This stops the page from reloading
 
-    // Show loading state
-    btn.innerText = 'Sending...';
-    btn.disabled = true;
+            const form = this;
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
 
-    // This part actually sends the email to FormSubmit.co
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            // Success: Show the green button effect
-            btn.innerText = 'Message Sent!';
-            btn.style.backgroundColor = '#22c55e'; // Green color
-            btn.style.borderColor = '#22c55e';
-            btn.style.color = '#ffffff';
-            form.reset();
-        } else {
-            btn.innerText = 'Error! Try again.';
-        }
-    })
-    .catch(error => {
-        btn.innerText = 'Network Error';
-    })
-    .finally(() => {
-        // Reset the button back to normal after 3 seconds
-        setTimeout(() => {
-            btn.innerText = originalText;
-            btn.disabled = false;
-            btn.style.backgroundColor = ''; 
-            btn.style.borderColor = '';
-            btn.style.color = '';
-        }, 3000);
-    });
-});
+            // Show loading state
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+
+            // This part actually sends the email to FormSubmit.co
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Success: Show the green button effect
+                        btn.innerText = 'Message Sent!';
+                        btn.style.backgroundColor = '#22c55e'; // Green color
+                        btn.style.borderColor = '#22c55e';
+                        btn.style.color = '#ffffff';
+                        form.reset();
+                    } else {
+                        btn.innerText = 'Error! Try again.';
+                    }
+                })
+                .catch(error => {
+                    btn.innerText = 'Network Error';
+                })
+                .finally(() => {
+                    // Reset the button back to normal after 3 seconds
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                        btn.style.backgroundColor = '';
+                        btn.style.borderColor = '';
+                        btn.style.color = '';
+                    }, 3000);
+                });
+        });
 
 
         // --- Particle Network Logic (Restored & Blended) ---
@@ -1065,8 +1452,8 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 
         class Particle {
             constructor(x, y, directionX, directionY, size, color) {
-                this.x = x; this.y = y; 
-                this.directionX = directionX; this.directionY = directionY; 
+                this.x = x; this.y = y;
+                this.directionX = directionX; this.directionY = directionY;
                 this.size = size; this.color = color;
             }
             draw() {
@@ -1078,17 +1465,17 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
             update() {
                 if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
                 if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
-                
+
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < mouse.radius + this.size){
-                    if(mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 5;
-                    if(mouse.x > this.x && this.x > this.size * 10) this.x -= 5;
-                    if(mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 5;
-                    if(mouse.y > this.y && this.y > this.size * 10) this.y -= 5;
+                if (distance < mouse.radius + this.size) {
+                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 5;
+                    if (mouse.x > this.x && this.x > this.size * 10) this.x -= 5;
+                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 5;
+                    if (mouse.y > this.y && this.y > this.size * 10) this.y -= 5;
                 }
-                
+
                 this.x += this.directionX;
                 this.y += this.directionY;
                 this.draw();
@@ -1100,7 +1487,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
             canvas.height = window.innerHeight;
             particles = [];
             // Reduced density slightly to prevent clutter with blobs
-            let numberOfParticles = (canvas.height * canvas.width) / 12000; 
+            let numberOfParticles = (canvas.height * canvas.width) / 12000;
             const theme = getCurrentTheme();
 
             for (let i = 0; i < numberOfParticles; i++) {
@@ -1110,7 +1497,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
                 let directionX = (Math.random() * 0.4) - 0.2;
                 let directionY = (Math.random() * 0.4) - 0.2;
                 let color = particleColors[theme].particle;
-                
+
                 particles.push(new Particle(x, y, directionX, directionY, size, color));
             }
         }
@@ -1124,7 +1511,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
                 for (let b = a; b < particles.length; b++) {
                     let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) +
                         ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
-                    
+
                     if (distance < (connectDistance * connectDistance)) {
                         opacityValue = 1 - (distance / (connectDistance * connectDistance));
                         ctx.strokeStyle = particleColors[theme].line(opacityValue);
@@ -1142,9 +1529,9 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         const blob1 = document.querySelector('.blob-1');
         const blob2 = document.querySelector('.blob-2');
         const blob3 = document.querySelector('.blob-3');
-        
+
         let time = 0;
-        
+
         // Physics state
         let targetScrollY = 0;
         let currentScrollY = 0;
@@ -1161,12 +1548,12 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         function updateBlobs() {
             // 1. Smooth Scroll Tracking
             targetScrollY = window.scrollY;
-            currentScrollY = lerp(currentScrollY, targetScrollY, 0.05); 
+            currentScrollY = lerp(currentScrollY, targetScrollY, 0.05);
 
             // 2. Smooth Mouse Tracking
             const centerX = window.innerWidth / 2;
             const centerY = window.innerHeight / 2;
-            
+
             const mx = mouse.x !== null ? mouse.x : centerX;
             const my = mouse.y !== null ? mouse.y : centerY;
 
@@ -1177,27 +1564,27 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
             time += 0.005;
 
             // 4. Calculate Offsets (Scroll + Mouse + Floating)
-            
+
             // Blob 1 (Top Left) 
             const x1 = (currentScrollY * 0.05) + (currentMouseX - centerX) * 0.05 + Math.sin(time) * 30;
             const y1 = (currentScrollY * 0.1) + (currentMouseY - centerY) * 0.05 + Math.cos(time * 0.8) * 20;
-            if(blob1) blob1.style.transform = `translate(${x1}px, ${y1}px) scale(${1 + Math.sin(time * 0.5) * 0.1})`;
+            if (blob1) blob1.style.transform = `translate(${x1}px, ${y1}px) scale(${1 + Math.sin(time * 0.5) * 0.1})`;
 
             // Blob 2 (Bottom Right)
             const x2 = (currentScrollY * -0.05) + (currentMouseX - centerX) * -0.05 + Math.cos(time * 0.7) * 40;
             const y2 = -(currentScrollY * 0.05) + (currentMouseY - centerY) * -0.05 + Math.sin(time * 0.6) * 30;
-            if(blob2) blob2.style.transform = `translate(${x2}px, ${y2}px) scale(${1 + Math.cos(time * 0.4) * 0.15})`;
+            if (blob2) blob2.style.transform = `translate(${x2}px, ${y2}px) scale(${1 + Math.cos(time * 0.4) * 0.15})`;
 
             // Blob 3 (Middle)
             const x3 = (currentScrollY * 0.02) + (currentMouseX - centerX) * 0.02 + Math.sin(time * 0.3) * 50;
             const y3 = -(currentScrollY * 0.02) + Math.cos(time * 0.5) * 40;
-            if(blob3) blob3.style.transform = `translate(${x3}px, ${y3}px) scale(${1 + Math.sin(time + 2) * 0.1})`;
+            if (blob3) blob3.style.transform = `translate(${x3}px, ${y3}px) scale(${1 + Math.sin(time + 2) * 0.1})`;
         }
 
         function animateParticles() {
             requestAnimationFrame(animateParticles);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+
             // Physics Update Loop
             updateBlobs();
 
@@ -1255,6 +1642,64 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         // Initialize Typewriter
         document.addEventListener('DOMContentLoaded', type);
 
+        // --- Lightbox Logic ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.style.display = 'flex';
+            // Slight delay to allow display flex to apply before opacity transition
+            setTimeout(() => {
+                lightbox.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Disable scroll
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+                lightboxImg.src = '';
+            }, 300); // Match transition duration
+            document.body.style.overflow = 'auto'; // Enable scroll
+        }
+
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeLightbox);
+        }
+
+        if (lightbox) {
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        // --- Footer Name Animation ---
+        const footerName = document.getElementById('footer-name');
+        if (footerName) {
+            const text = footerName.innerText;
+            footerName.innerHTML = '';
+            [...text].forEach((char, i) => {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char; // Preserve space
+                span.classList.add('footer-char');
+                // Slightly faster wave: 0.12s interval. -5s offset ensures immediate start.
+                span.style.animationDelay = `${(i * 0.12) - 5}s`;
+                footerName.appendChild(span);
+            });
+        }
     </script>
 </body>
+
 </html>
